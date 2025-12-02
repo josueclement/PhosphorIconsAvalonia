@@ -9,13 +9,13 @@
         <Authors>Josué Clément</Authors>
         <Copyright>Copyright © 2025 Josué Clément</Copyright>
         <PackageId>PhosphorIconsAvalonia</PackageId>
-        <Title>Phosphor icons for Avalonia</Title>
+        <Title>Phosphor Icons for Avalonia UI - 1000+ Beautiful Vector Icons</Title>
         <Version>1.0.0</Version>
-        <Description>Avalonia vector icon library using Phosphor icons</Description>
-        <PackageTags>avalonia icons phosphoricons</PackageTags>
+        <Description>A comprehensive Avalonia UI library providing 1,000+ beautiful, scalable vector icons from Phosphor Icons. Features 5 visual styles (bold, fill, light, regular, thin), easy XAML integration with markup extensions, and embedded SVG resources. Perfect for building modern cross-platform applications with consistent, professional iconography.</Description>
+        <PackageTags>avalonia;avaloniaui;icons;phosphor;phosphor-icons;vector;svg;xaml;ui;cross-platform;markup-extension;material-icons;fluent-icons;icon-library;netstandard</PackageTags>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
-        <PackageProjectUrl>https://github.com/josueclement/PhosphorIconsAvalonia/</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/josueclement/PhosphorIconsAvalonia</PackageProjectUrl>
         <RepositoryUrl>https://github.com/josueclement/PhosphorIconsAvalonia</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <IncludeSymbols>True</IncludeSymbols>

@@ -1,6 +1,3 @@
 namespace PhosphorIconsAvalonia;
 
-public interface PhosphorIconsAvaloniaMarker
-{
-    
-}
+internal interface IPhosphorIconsAvaloniaMarker;

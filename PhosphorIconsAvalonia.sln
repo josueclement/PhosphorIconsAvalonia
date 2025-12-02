@@ -1,8 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhosphorIconsAvalonia", "PhosphorIconsAvalonia\PhosphorIconsAvalonia.csproj", "{CA5101A1-D1F0-46ED-9AF8-67A1B81AD2FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesterApp", "TesterApp\TesterApp.csproj", "{90EDF646-8378-47E3-A76C-CB34706673EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA5101A1-D1F0-46ED-9AF8-67A1B81AD2FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA5101A1-D1F0-46ED-9AF8-67A1B81AD2FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA5101A1-D1F0-46ED-9AF8-67A1B81AD2FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA5101A1-D1F0-46ED-9AF8-67A1B81AD2FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90EDF646-8378-47E3-A76C-CB34706673EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90EDF646-8378-47E3-A76C-CB34706673EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90EDF646-8378-47E3-A76C-CB34706673EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90EDF646-8378-47E3-A76C-CB34706673EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

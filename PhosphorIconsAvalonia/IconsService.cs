@@ -12,7 +12,20 @@ public class IconsService
         => $"{icon}".Replace("_", "-");
 
     private static string GetIconStreamName(Icon icon, IconType iconType)
-        => $"PhosphorIconsAvalonia.Icons.{iconType}.{GetIconName(icon)}.svg";
+    {
+        switch (iconType)
+        {
+            case IconType.bold:
+            case IconType.fill:
+            case IconType.light:
+            case IconType.thin:
+                return $"PhosphorIconsAvalonia.Icons.{iconType}.{GetIconName(icon)}-{iconType}.svg";
+            case IconType.regular:
+                return $"PhosphorIconsAvalonia.Icons.{iconType}.{GetIconName(icon)}.svg";
+            default:
+                throw new InvalidOperationException($"Icon type '{iconType}' not supported");
+        }
+    }
 
     // ReSharper disable once MemberCanBePrivate.Global
     public Stream? GetIconStream(Icon icon, IconType iconType)

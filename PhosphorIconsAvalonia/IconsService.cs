@@ -4,13 +4,32 @@ using Avalonia.Media;
 
 namespace PhosphorIconsAvalonia;
 
+/// <summary>
+/// Provides services for loading and rendering Phosphor icons from embedded SVG resources.
+/// </summary>
+/// <remarks>
+/// This service reads SVG icon files embedded in the assembly, extracts the vector path data,
+/// and converts them into Avalonia geometry objects and drawing images.
+/// </remarks>
 public class IconsService
 {
     private static readonly Assembly Assembly = typeof(IPhosphorIconsAvaloniaMarker).Assembly; 
     
+    /// <summary>
+    /// Converts an icon enum value to its corresponding file name format.
+    /// </summary>
+    /// <param name="icon">The icon to convert.</param>
+    /// <returns>The icon name with underscores replaced by hyphens.</returns>
     private static string GetIconName(Icon icon)
         => $"{icon}".Replace("_", "-");
 
+    /// <summary>
+    /// Constructs the full resource stream name for a specific icon and type.
+    /// </summary>
+    /// <param name="icon">The icon to locate.</param>
+    /// <param name="iconType">The visual style of the icon.</param>
+    /// <returns>The fully qualified resource name.</returns>
+    /// <exception cref="InvalidOperationException">Thrown when the icon type is not supported.</exception>
     private static string GetIconStreamName(Icon icon, IconType iconType)
     {
         switch (iconType)
@@ -27,10 +46,25 @@ public class IconsService
         }
     }
 
+    /// <summary>
+    /// Retrieves the embedded resource stream for the specified icon.
+    /// </summary>
+    /// <param name="icon">The icon to load.</param>
+    /// <param name="iconType">The visual style of the icon.</param>
+    /// <returns>A stream containing the SVG icon data, or null if not found.</returns>
     // ReSharper disable once MemberCanBePrivate.Global
     public Stream? GetIconStream(Icon icon, IconType iconType)
         => Assembly.GetManifestResourceStream(GetIconStreamName(icon, iconType));
 
+    /// <summary>
+    /// Extracts the SVG path data from the icon's embedded SVG file.
+    /// </summary>
+    /// <param name="icon">The icon to load.</param>
+    /// <param name="iconType">The visual style of the icon.</param>
+    /// <returns>The SVG path data string from the 'd' attribute.</returns>
+    /// <exception cref="InvalidOperationException">
+    /// Thrown when the icon is not found or the path data cannot be extracted.
+    /// </exception>
     // ReSharper disable once MemberCanBePrivate.Global
     public string GetIconData(Icon icon, IconType iconType)
     {
@@ -58,6 +92,12 @@ public class IconsService
         throw new InvalidOperationException($"Cannot read icon '{GetIconName(icon)}'");
     }
 
+    /// <summary>
+    /// Creates an Avalonia Geometry object from the specified icon.
+    /// </summary>
+    /// <param name="icon">The icon to render.</param>
+    /// <param name="iconType">The visual style of the icon.</param>
+    /// <returns>A <see cref="Geometry"/> object containing the icon's vector path.</returns>
     public Geometry CreateGeometry(Icon icon, IconType iconType)
     {
         // Get the icon data
@@ -67,6 +107,13 @@ public class IconsService
         return Geometry.Parse(data);
     }
 
+    /// <summary>
+    /// Creates a DrawingImage with the specified icon and brush color.
+    /// </summary>
+    /// <param name="icon">The icon to render.</param>
+    /// <param name="iconType">The visual style of the icon.</param>
+    /// <param name="brush">The brush to use for filling the icon.</param>
+    /// <returns>A <see cref="DrawingImage"/> that can be used as an image source.</returns>
     public DrawingImage CreateDrawingImage(Icon icon, IconType iconType, IBrush brush)
     {
         // Get the vector geometry for the icon

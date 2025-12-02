@@ -2,6 +2,15 @@
 // ReSharper disable UnusedMember.Global
 namespace PhosphorIconsAvalonia;
 
+/// <summary>
+/// Represents the complete collection of available Phosphor icons.
+/// Each enum value corresponds to a specific icon design from the Phosphor icon set.
+/// </summary>
+/// <remarks>
+/// This enum contains over 1,000 icons covering a wide range of categories including:
+/// UI elements, arrows, shapes, brands, technology, nature, communication, and more.
+/// Icons are named using lowercase with underscores for multi-word names.
+/// </remarks>
 public enum Icon
 {
    	acorn,

@@ -12,7 +12,7 @@ namespace PhosphorIconsAvalonia;
 /// This service reads SVG icon files embedded in the assembly, extracts the vector path data,
 /// and converts them into Avalonia geometry objects and drawing images.
 /// </remarks>
-public class IconsService
+public class IconService
 {
     private static readonly Assembly Assembly = typeof(IPhosphorIconsAvaloniaMarker).Assembly;
     private readonly FusionCache _cache = new(new FusionCacheOptions());

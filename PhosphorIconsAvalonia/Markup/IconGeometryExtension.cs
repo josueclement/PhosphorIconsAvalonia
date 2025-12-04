@@ -28,7 +28,7 @@ public class IconGeometryExtension : MarkupExtension
     /// <returns>An Avalonia <see cref="Avalonia.Media.Geometry"/> object containing the icon's vector path data.</returns>
     public override object ProvideValue(IServiceProvider serviceProvider)
     {
-        var service = new IconsService();
+        var service = new IconService();
         return service.CreateGeometry(Icon, IconType);
     }
 }

@@ -34,7 +34,7 @@ public class IconSourceExtension : MarkupExtension
     /// <returns>A <see cref="DrawingImage"/> that can be used as an image source.</returns>
     public override object ProvideValue(IServiceProvider serviceProvider)
     {
-        var service = new IconsService();
+        var service = new IconService();
         return service.CreateDrawingImage(Icon, IconType, Brush);
     }
 }

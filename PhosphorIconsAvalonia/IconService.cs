@@ -6,16 +6,17 @@ using ZiggyCreatures.Caching.Fusion;
 namespace PhosphorIconsAvalonia;
 
 /// <summary>
-/// Provides services for loading and rendering Phosphor icons from embedded SVG resources.
+/// Provides static services for loading and rendering Phosphor icons from embedded SVG resources.
 /// </summary>
 /// <remarks>
-/// This service reads SVG icon files embedded in the assembly, extracts the vector path data,
-/// and converts them into Avalonia geometry objects and drawing images.
+/// This static service reads SVG icon files embedded in the assembly, extracts the vector path data,
+/// and converts them into Avalonia geometry objects and drawing images. Icon data is cached using
+/// FusionCache for optimal performance on repeated access.
 /// </remarks>
-public class IconService
+public static class IconService
 {
     private static readonly Assembly Assembly = typeof(IPhosphorIconsAvaloniaMarker).Assembly;
-    private readonly FusionCache _cache = new(new FusionCacheOptions());
+    private static readonly FusionCache Cache = new(new FusionCacheOptions());
     
     /// <summary>
     /// Converts an icon enum value to its corresponding file name format.
@@ -55,7 +56,7 @@ public class IconService
     /// <param name="iconType">The visual style of the icon.</param>
     /// <returns>A stream containing the SVG icon data, or null if not found.</returns>
     // ReSharper disable once MemberCanBePrivate.Global
-    public Stream? GetIconStream(Icon icon, IconType iconType)
+    public static Stream? GetIconStream(Icon icon, IconType iconType)
         => Assembly.GetManifestResourceStream(GetIconStreamName(icon, iconType));
 
     /// <summary>
@@ -68,7 +69,7 @@ public class IconService
     /// Thrown when the icon is not found or the path data cannot be extracted.
     /// </exception>
     // ReSharper disable once MemberCanBePrivate.Global
-    public string GetIconData(Icon icon, IconType iconType)
+    public static string GetIconData(Icon icon, IconType iconType)
     {
         // Load the SVG file from embedded resources
         using var stream = GetIconStream(icon, iconType)
@@ -100,11 +101,11 @@ public class IconService
     /// <param name="icon">The icon to render.</param>
     /// <param name="iconType">The visual style of the icon.</param>
     /// <returns>A <see cref="Geometry"/> object containing the icon's vector path.</returns>
-    public Geometry CreateGeometry(Icon icon, IconType iconType)
+    public static Geometry CreateGeometry(Icon icon, IconType iconType)
     {
         var cacheKey = $"{icon}_{iconType}";
-        var data = _cache.GetOrSet(cacheKey, GetIconData(icon, iconType));
-        
+        var data = Cache.GetOrSet<string>(cacheKey, _ => GetIconData(icon, iconType));
+    
         // Parse the icon data into a Geometry object
         return Geometry.Parse(data);
     }
@@ -116,7 +117,7 @@ public class IconService
     /// <param name="iconType">The visual style of the icon.</param>
     /// <param name="brush">The brush to use for filling the icon.</param>
     /// <returns>A <see cref="DrawingImage"/> that can be used as an image source.</returns>
-    public DrawingImage CreateDrawingImage(Icon icon, IconType iconType, IBrush brush)
+    public static DrawingImage CreateDrawingImage(Icon icon, IconType iconType, IBrush brush)
     {
         // Get the vector geometry for the icon
         var geometry = CreateGeometry(icon, iconType);

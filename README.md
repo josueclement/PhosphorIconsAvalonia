@@ -11,7 +11,7 @@ A comprehensive Avalonia UI library providing access to **1,000+ beautiful, open
 - 🚀 **Easy XAML integration** with markup extensions
 - 📦 **Embedded SVG resources** - no external dependencies
 - 🎯 **Full control** over size, color, and styling
-- ⚡ **Performance optimized** - icons parsed on-demand
+- ⚡ **Performance optimized** - icons parsed on-demand with FusionCache for fast repeated access
 
 ## 📦 Installation
 
@@ -53,11 +53,11 @@ Each icon is available in **5 visual styles**:
 
 | Style | Description | Use Case |
 |-------|-------------|----------|
-| `bold` | Thick, prominent strokes | Emphasis, primary actions |
-| `fill` | Solid filled shapes | Active states, selections |
+| `thin` | Minimal stroke weight | Elegant, minimalist designs |
 | `light` | Thin, delicate strokes | Subtle UI, large displays |
 | `regular` | Standard stroke width | General purpose (default) |
-| `thin` | Minimal stroke weight | Elegant, minimalist designs |
+| `bold` | Thick, prominent strokes | Emphasis, primary actions |
+| `fill` | Solid filled shapes | Active states, selections |
 
 Copyright (c) 2025 Josué Clément
 

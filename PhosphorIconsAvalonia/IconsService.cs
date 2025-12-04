@@ -1,6 +1,7 @@
+using Avalonia.Media;
 using System.Reflection;
 using System.Xml;
-using Avalonia.Media;
+using ZiggyCreatures.Caching.Fusion;
 
 namespace PhosphorIconsAvalonia;
 
@@ -13,7 +14,8 @@ namespace PhosphorIconsAvalonia;
 /// </remarks>
 public class IconsService
 {
-    private static readonly Assembly Assembly = typeof(IPhosphorIconsAvaloniaMarker).Assembly; 
+    private static readonly Assembly Assembly = typeof(IPhosphorIconsAvaloniaMarker).Assembly;
+    private readonly FusionCache _cache = new(new FusionCacheOptions());
     
     /// <summary>
     /// Converts an icon enum value to its corresponding file name format.
@@ -100,8 +102,8 @@ public class IconsService
     /// <returns>A <see cref="Geometry"/> object containing the icon's vector path.</returns>
     public Geometry CreateGeometry(Icon icon, IconType iconType)
     {
-        // Get the icon data
-        var data = GetIconData(icon, iconType);
+        var cacheKey = $"{icon}_{iconType}";
+        var data = _cache.GetOrSet(cacheKey, GetIconData(icon, iconType));
         
         // Parse the icon data into a Geometry object
         return Geometry.Parse(data);

@@ -15,38 +15,38 @@
               VerticalAlignment="Center">
             <Grid Grid.Column="0" RowDefinitions="Auto, Auto">
                 <PathIcon Grid.Row="0"
-                          Data="{pia:IconGeometry Icon=file, IconType=bold}"
+                          Data="{pia:IconGeometry Icon=file, IconType=thin}"
                           Width="32" Height="32"
                           Margin="10" HorizontalAlignment="Center"/>
-                <TextBlock Grid.Row="1" Text="bold" Margin="10" HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="1" Text="thin" Margin="10" HorizontalAlignment="Center" />
             </Grid>
             <Grid Grid.Column="1" RowDefinitions="Auto, Auto">
-                <PathIcon Grid.Row="0"
-                          Data="{pia:IconGeometry Icon=file, IconType=fill}"
-                          Width="32" Height="32"
-                          Margin="10" HorizontalAlignment="Center"/>
-                <TextBlock Grid.Row="1" Text="fill" Margin="10" HorizontalAlignment="Center" />
-            </Grid>
-            <Grid Grid.Column="2" RowDefinitions="Auto, Auto">
                 <PathIcon Grid.Row="0"
                           Data="{pia:IconGeometry Icon=file, IconType=light}"
                           Width="32" Height="32"
                           Margin="10" HorizontalAlignment="Center"/>
                 <TextBlock Grid.Row="1" Text="light" Margin="10" HorizontalAlignment="Center" />
             </Grid>
-            <Grid Grid.Column="3" RowDefinitions="Auto, Auto">
+            <Grid Grid.Column="2" RowDefinitions="Auto, Auto">
                 <PathIcon Grid.Row="0"
                           Data="{pia:IconGeometry Icon=file, IconType=regular}"
                           Width="32" Height="32"
                           Margin="10" HorizontalAlignment="Center"/>
                 <TextBlock Grid.Row="1" Text="regular" Margin="10" HorizontalAlignment="Center" />
             </Grid>
-            <Grid Grid.Column="4" RowDefinitions="Auto, Auto">
+            <Grid Grid.Column="3" RowDefinitions="Auto, Auto">
                 <PathIcon Grid.Row="0"
-                          Data="{pia:IconGeometry Icon=file, IconType=thin}"
+                          Data="{pia:IconGeometry Icon=file, IconType=bold}"
                           Width="32" Height="32"
                           Margin="10" HorizontalAlignment="Center"/>
-                <TextBlock Grid.Row="1" Text="thin" Margin="10" HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="1" Text="bold" Margin="10" HorizontalAlignment="Center" />
+            </Grid>
+            <Grid Grid.Column="4" RowDefinitions="Auto, Auto">
+                <PathIcon Grid.Row="0"
+                          Data="{pia:IconGeometry Icon=file, IconType=fill}"
+                          Width="32" Height="32"
+                          Margin="10" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Row="1" Text="fill" Margin="10" HorizontalAlignment="Center" />
             </Grid>
         </Grid>
     </Grid>

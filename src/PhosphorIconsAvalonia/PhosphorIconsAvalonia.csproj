@@ -2,35 +2,32 @@
 
     <PropertyGroup>
         <OutputType>Library</OutputType>
-        <TargetFramework>netstandard2.0</TargetFramework>
+        <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <LangVersion>14</LangVersion>
         <Authors>Josué Clément</Authors>
-        <Copyright>Copyright © 2025 Josué Clément</Copyright>
+        <Copyright>Copyright © 2026 Josué Clément</Copyright>
         <PackageId>PhosphorIconsAvalonia</PackageId>
         <Title>Phosphor Icons for Avalonia UI - 1000+ Beautiful Vector Icons</Title>
-        <Version>1.1.0</Version>
+        <Version>1.2.0</Version>
         <Description>A comprehensive Avalonia UI library providing 1,000+ beautiful, scalable vector icons from Phosphor Icons. Features 5 visual styles (bold, fill, light, regular, thin), easy XAML integration with markup extensions, and embedded SVG resources. Perfect for building modern cross-platform applications with consistent, professional iconography.</Description>
-        <PackageTags>avalonia;avaloniaui;icons;phosphor;phosphor-icons;vector;svg;xaml;ui;cross-platform;markup-extension;material-icons;fluent-icons;icon-library;netstandard</PackageTags>
+        <PackageTags>avalonia;avaloniaui;icons;phosphor;phosphor-icons;vector;svg;xaml;ui;cross-platform;markup-extension;material-icons;fluent-icons;icon-library;net8;net10</PackageTags>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
-        <PackageProjectUrl>https://github.com/josueclement/PhosphorIconsAvalonia</PackageProjectUrl>
         <RepositoryUrl>https://github.com/josueclement/PhosphorIconsAvalonia</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
-        <IncludeSymbols>True</IncludeSymbols>
-        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <ItemGroup>
-        <None Include="..\README.md" Pack="true" PackagePath="\" />
-        <None Include="..\LICENSE.md" Pack="true" PackagePath="\" />
+        <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+        <None Include="..\..\LICENSE.md" Pack="true" PackagePath="\" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="11.0.0"/>
-        <PackageReference Include="ZiggyCreatures.FusionCache" Version="2.4.0" />
+        <PackageReference Include="Avalonia" Version="12.0.0" />
+        <PackageReference Include="ZiggyCreatures.FusionCache" Version="2.6.0" />
     </ItemGroup>
 
     <ItemGroup>

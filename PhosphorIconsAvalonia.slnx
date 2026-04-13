@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/PhosphorIconsAvalonia/PhosphorIconsAvalonia.csproj" />
+    <Project Path="src/TesterApp/TesterApp.csproj" />
+  </Folder>
+</Solution>

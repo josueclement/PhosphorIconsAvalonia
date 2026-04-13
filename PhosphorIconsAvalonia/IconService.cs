@@ -1,6 +1,6 @@
-using Avalonia.Media;
 using System.Reflection;
 using System.Xml;
+using Avalonia.Media;
 using ZiggyCreatures.Caching.Fusion;
 
 namespace PhosphorIconsAvalonia;

@@ -59,6 +59,6 @@ Each icon is available in **5 visual styles**:
 | `bold` | Thick, prominent strokes | Emphasis, primary actions |
 | `fill` | Solid filled shapes | Active states, selections |
 
-Copyright (c) 2025 Josué Clément
+Copyright (c) 2026 Josué Clément
 
 Made with ❤️ for the Avalonia community
